@@ -3,6 +3,7 @@ logging:
 
 server:
   port: 8081
+  context-path: /nho
 spring:
   h2:
     console:
