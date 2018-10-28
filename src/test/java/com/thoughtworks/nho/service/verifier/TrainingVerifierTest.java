@@ -12,32 +12,32 @@ public class TrainingVerifierTest {
     public void shouldThrowAttributeTooLongExceptionWhenTitleLengthGreaterThan15() throws AttributeEmptyException, AttributeTooLongException, AttributeCharTypeException {
         String title = "1234567890123456";
 
-        TrainingVerifier.verityTitle(title);
+        TrainingVerifier.verifyTitle(title);
     }
 
     @Test(expected = AttributeEmptyException.class)
     public void shouldThrowAttributeEmptyExceptionWhenTitleIsEmpty() throws AttributeTooLongException, AttributeEmptyException, AttributeCharTypeException {
         String title = "";
-        TrainingVerifier.verityTitle(title);
+        TrainingVerifier.verifyTitle(title);
     }
 
     @Test
     public void shouldHappyPassWhenTitleIncludeChineseAndUnderline() throws AttributeEmptyException, AttributeTooLongException, AttributeCharTypeException {
         String title = "标题123ABC";
 
-        TrainingVerifier.verityTitle(title);
+        TrainingVerifier.verifyTitle(title);
     }
 
     @Test(expected = AttributeCharTypeException.class)
     public void shouldAttributeCharTypeExceptionWhenTitleIncludeChineseAndUnderline() throws AttributeEmptyException, AttributeTooLongException, AttributeCharTypeException {
         String title = ",,";
 
-        TrainingVerifier.verityTitle(title);
+        TrainingVerifier.verifyTitle(title);
     }
 
     @Test(expected = AttributeEmptyException.class)
     public void shouldThrowAttributeEmptyExceptionWhenDescriptionIsEmpty() throws AttributeTooLongException, AttributeEmptyException {
-        TrainingVerifier.verityDescription(null);
+        TrainingVerifier.verifyDescription(null);
     }
 
 
@@ -48,7 +48,7 @@ public class TrainingVerifierTest {
             description.append(i);
         }
 
-        TrainingVerifier.verityDescription(description.toString());
+        TrainingVerifier.verifyDescription(description.toString());
     }
 
 

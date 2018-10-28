@@ -11,7 +11,7 @@ public class TrainingVerifier {
 
     private static Pattern chinesePattern = Pattern.compile("^[A-Za-z0-9\\u4e00-\\u9fa5]+$");
 
-    public static void verityTitle(String title) throws AttributeTooLongException, AttributeEmptyException, AttributeCharTypeException {
+    public static void verifyTitle(String title) throws AttributeTooLongException, AttributeEmptyException, AttributeCharTypeException {
         if (StringUtils.isEmpty(title)) throw new AttributeEmptyException();
         if (title.length() > 15) throw new AttributeTooLongException();
 
@@ -19,7 +19,7 @@ public class TrainingVerifier {
             throw new AttributeCharTypeException();
     }
 
-    public static void verityDescription(String description) throws AttributeTooLongException, AttributeEmptyException {
+    public static void verifyDescription(String description) throws AttributeTooLongException, AttributeEmptyException {
         if (StringUtils.isEmpty(description)) throw new AttributeEmptyException();
         if (description.length() > 300) throw new AttributeTooLongException();
     }
